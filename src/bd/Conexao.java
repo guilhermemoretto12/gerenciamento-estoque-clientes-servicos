@@ -14,6 +14,7 @@ public class Conexao {
     try {
       String conexao = "org.firebirdsql.jdbc.FBDriver";
       String path = System.getProperty("user.dir").replace("\\", "/");
+      System.out.println(path);
       String url = "jdbc:firebirdsql://localhost/" + path + "/MUNDIAL.FDB";
       String usuario = "SYSDBA";
       String senha = "masterkey";

@@ -1,0 +1,40 @@
+create table produto(
+idproduto integer not null primary key, 
+codproduto varchar(254) not null,
+nomeproduto varchar(254) not null,
+precocusto integer not null,
+precovenda integer not null, 
+qtdestoque integer not null)
+
+create table medico(
+idmedico integer not null primary key,
+nomemedico varchar(254) not null,
+statusmedico integer not null)
+
+create table cliente(
+idcliente integer not null primary key,
+nomecliente varchar(254) not null,
+cpf varchar(14),
+datanascimento varchar(10),
+telefone1 varchar(14),
+telefone2 varchar(14),
+estado varchar(254),
+cidade varchar(254),
+bairro varchar(254),
+lograouro varchar(254),
+numero varchar(6),
+pais1 varchar(254),
+pais2 varchar(254),
+statuscliente integer not null)
+
+create table servico(
+idservico integer not null primary key,
+dataservico varchar(10) not null, 
+descricao varchar(254) not null,
+idcliente integer not null, 
+idmedico integer not null,
+status integer not null)
+
+alter table servico
+add foreign key (idcliente) references cliente,
+add foreign key (idmedico) references medico
